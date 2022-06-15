@@ -1,0 +1,89 @@
+MASSA-LABS  : GUIDE https://massa.readthedocs.io/en/latest/testnet/install.html
+
+1 -Tải file
+$ sudo wget https://github.com/massalabs/massa/releases/download/TEST.11.2/massa_TEST.11.2_release_linux.tar.gz
+$ apt install gzip
+$ gunzip massa_TEST.11.2_release_linux.tar.gz
+$ tar -xvf massa_TEST.11.2_release_linux.tar
+ 
+2 -tạo systemd : copy pase all bellow --> enter
+
+sudo tee /etc/systemd/system/massa-node.service > /dev/null <<EOF
+[Unit]
+Description=Massa Node
+
+[Service]
+User=root
+ExecStart=/bin/bash -c 'cd /root/massa/massa-node && ./massa-node'
+Restart=always
+RestartSec=10
+LimitNOFILE=10000
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+3- here are some more nodes open to bootstrap (insert in massa/massa-node/base_config/config.toml)
+
+ $  vi massa/massa-node/base_config/config.toml
+
+["94.250.202.223:31245", "2BjqTM5ZPd2DUP2DzDsz1SYE4A9usxsLVvqAZsWyVvrYq5HS9T"],
+["154.26.128.79:31245", "kAkmZYHCPnnAEaoyygR8vaCqML3ue7ZP3R14JuE8k5Z7FNijJ"],
+["65.108.148.172:31245", "28z2idSM5jQSAY1obgjWNWg6GTCtHPpvQJAopomvEaPML4Ggqa"],
+["194.233.65.199:31245", "Xwse1PVVmHfcAwUUBxeGbGRVcXzkh5aZLhTAFCP1ArDX3SLgx"],
+["65.21.79.97:31245", "24ZQjtr2kUHKkFk6jX9oXrYVrWoCKCMtMPfFD5JywaAQFKhAjU"],
+["194.233.79.118:31245", "Av4X8Mv3oYQe5NELhdsQcqgVVF9xHQqsxyYkRU9PoLea2MDmh"],
+["135.181.75.219:31245", "FK2zXrnyr1YKcFw4s3ZwQkGEthybQYFomKN6R3XVSJ7rue8Nf"],
+["207.180.252.36:31245", "2hdueUvdLmniaSG3S8qv46CH79R9ztKVHf4pfVACusESWF94CY"],
+
+4- RUN
+$ sudo systemctl enable massa-node
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart massa-node.service && journalctl -u massa-node.service -f -o cat 
+
+
+CHECK node status  :$ service massa-node status
+
+5- TẠO VÍ : 
+$ cd massa/massa-client/
+$ ./massa-client
+$ wallet_generate_private_key
+$ wallet_info
+
+     5.189.148.173 - discord thonguyen
+     Private key: y3ZsWNvsPSaeFawzLV9EUJZx91RAu2ook83YDD15bBDR5t1bu
+     Public key: WZPKeXDJGhmPKZZvQ4J9r176sZ5rve618DvCub3dHzsK3yf9y
+     Address: A1jd3xSWpAASUV72o27p3TtETkefPGwvqAALtyP32Jp8E7kQcbe
+
+154.12.229.177 - discord tunguyen
+Private key: 4LXhCXGgUC1rFXQpQVeqhQGBDRuWEDU33j9ypZ7hbXf9qCM1t
+Public key: 2RUcRD71r4hap8UCNKWyaMwhdq5fjnBr2tW8Wheezv9e4R1qq5
+Address: A1aE4HBDRPW44WvxzTtGCQeyBa1Ts3yKUFKD3DRMt31QykUJ2Cy
+
+
+6 -discord ---> faucet
+
+7 - buy roll
+               
+ $ buy_rolls A1jd3xSWpAASUV72o27p3TtETkefPGwvqAALtyP32Jp8E7kQcbe 1 0
+
+8 - add private ley 
+
+  $ node_add_staking_private_keys y3ZsWNvsPSaeFawzLV9EUJZx91RAu2ook83YDD15bBDR5t1bu
+node_add_staking_private_keys 4LXhCXGgUC1rFXQpQVeqhQGBDRuWEDU33j9ypZ7hbXf9qCM1t
+
+sau 2 tiếng nó tự stake
+
+9 - liên kết discord
+
+vào kênh testnet registi..chát đại câu gì đó, sau đó bot nó gởi tin nhắn 
+
+chạy lệnh :$ node_testnet_rewards_program_ownership_proof A1aE4HBDRPW44WvxzTtGCQeyBa1Ts3yKUFKD3DRMt31QykUJ2Cy 849656887363371029
+node_testnet_rewards_program_ownership_proof your_staking_address 739832204384796693 
+
+copy đầu ra gửi cho nó
+
+
+
+
+
