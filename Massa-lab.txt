@@ -50,17 +50,6 @@ $ ./massa-client
 $ wallet_generate_private_key
 $ wallet_info
 
-     5.189.148.173 - discord thonguyen
-     Private key: y3ZsWNvsPSaeFawzLV9EUJZx91RAu2ook83YDD15bBDR5t1bu
-     Public key: WZPKeXDJGhmPKZZvQ4J9r176sZ5rve618DvCub3dHzsK3yf9y
-     Address: A1jd3xSWpAASUV72o27p3TtETkefPGwvqAALtyP32Jp8E7kQcbe
-
-154.12.229.177 - discord tunguyen
-Private key: 4LXhCXGgUC1rFXQpQVeqhQGBDRuWEDU33j9ypZ7hbXf9qCM1t
-Public key: 2RUcRD71r4hap8UCNKWyaMwhdq5fjnBr2tW8Wheezv9e4R1qq5
-Address: A1aE4HBDRPW44WvxzTtGCQeyBa1Ts3yKUFKD3DRMt31QykUJ2Cy
-
-
 6 -discord ---> faucet
 
 7 - buy roll
