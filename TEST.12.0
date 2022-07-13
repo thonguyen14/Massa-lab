@@ -26,7 +26,7 @@ Description=Massa Node
 
 [Service]
 User=root
-ExecStart=/bin/bash -c 'cd /root/massa/massa-node && ./massa-node -p abcdef12'
+ExecStart=/bin/bash -c 'cd /root/massa/massa-node && ./massa-node -p <Your-PASSWORD>'
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=10000
