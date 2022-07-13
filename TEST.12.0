@@ -1,3 +1,7 @@
+Nếu có chạy massa cũ thì xóa trước khi chạy .12.0 ( chạy mới bỏ qua )
+
+$ systemctl stop massa-node && systemctl disable massa-node && rm -rf $HOME/massa/
+
 #1 -Tải file
 $ sudo wget https://github.com/massalabs/massa/releases/download/TEST.12.0/massa_TEST.12.0_release_linux.tar.gz
 $ apt install gzip
