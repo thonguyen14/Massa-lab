@@ -17,7 +17,7 @@ vi config.toml
 
 [network]
 routable_ip = "AAA.BBB.CCC.DDD"
-trong đó AAA.BBB.CCC.DDD sẽ được thay thế bằng địa chỉ IP công cộng của bạn
+trong đó AAA.BBB.CCC.DDD sẽ được thay thế bằng địa chỉ Public IP của bạn
 
 . kiểm tra xem các cổng của mình có đang mở hay không bằng cách nhập địa chỉ IP công cộng và cổng 31244 vào https://www.yougetsignal.com/tools/open-ports/ ( sau đó một lần nữa với cổng 31245)
 . Khi nút của bạn có thể định tuyến được, bạn cần gửi địa chỉ IP công khai của nút tới bot Discord sau khi đk discord ở bước cuối
