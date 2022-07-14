@@ -20,7 +20,6 @@ routable_ip = "AAA.BBB.CCC.DDD"
 trong đó AAA.BBB.CCC.DDD sẽ được thay thế bằng địa chỉ Public IP của bạn
 
 . kiểm tra xem các cổng của mình có đang mở hay không bằng cách nhập địa chỉ IP công cộng và cổng 31244 vào https://www.yougetsignal.com/tools/open-ports/ ( sau đó một lần nữa với cổng 31245)
-. Khi nút của bạn có thể định tuyến được, bạn cần gửi địa chỉ IP công khai của nút tới bot Discord sau khi đk discord ở bước cuối
  
 #3 -tạo systemd : copy pase all bellow --> enter
 
@@ -63,7 +62,7 @@ wallet_info
 
 vào kênh #testnet reward registi..chát đại câu gì đó, sau đó bot nó gởi tin nhắn 
 
-chạy lệnh :$node_testnet_rewards_program_ownership_proof Address discord_id
+chạy lệnh :$node_testnet_rewards_program_ownership_proof <Wallet-ddress> <discord_id>
 
   example : node_testnet_rewards_program_ownership_proof A1aE4HBDRPW44WvxzTtGCQeyBa1Ts3yKUFKD3DRMt31QykUJ2Cy 849656887363371029
   
